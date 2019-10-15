@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b730fec9-e1c7-493a-9ee4-b86804c4529a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SliderLab/optimized.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Railroad/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/Railroad/path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Railroad/rrNodeCity.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Railroad/rrNodeCity.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,37 +12,33 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="AI" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WordLadder/ladders.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1968">
-              <caret line="83" column="77" selection-start-line="83" selection-start-column="77" selection-end-line="83" selection-end-column="77" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SliderLab/optimized.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2328">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Railroad/rrMapCoarse.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Railroad/path.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1272">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SliderLab/opitimized2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+            <state relative-caret-position="52">
+              <caret line="91" column="22" lean-forward="true" selection-start-line="65" selection-start-column="4" selection-end-line="91" selection-end-column="22" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -49,34 +47,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SliderLab/words.txt">
+        <entry file="file://$PROJECT_DIR$/Railroad/rrNodes.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="16" />
+            <state relative-caret-position="521">
+              <caret line="3816" column="8" selection-start-line="3816" selection-start-column="8" selection-end-line="3816" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SliderLab/quiz1.py">
+        <entry file="file://$PROJECT_DIR$/Railroad/rrNodeCity.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="26" column="13" selection-end-line="50" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1176">
+              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SliderLab/next.py">
+        <entry file="file://$PROJECT_DIR$/Railroad/rrEdges.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Railroad/distanceDemo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2088">
-              <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="144">
+              <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -93,6 +90,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>list</find>
+      <find>14.68673</find>
+      <find>-130.35722</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,13 +109,10 @@
         <option value="$PROJECT_DIR$/SliderLab/words.txt" />
         <option value="$PROJECT_DIR$/SliderLab/next.py" />
         <option value="$PROJECT_DIR$/SliderLab/opitimized2.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/Railroad/distanceDemo.py" />
+        <option value="$PROJECT_DIR$/Railroad/rrNodeCity.txt" />
+        <option value="$PROJECT_DIR$/Railroad/rrEdges.txt" />
+        <option value="$PROJECT_DIR$/Railroad/path.py" />
       </list>
     </option>
   </component>
@@ -148,6 +144,11 @@
             <path>
               <item name="AI" type="b2602c69:ProjectViewProjectNode" />
               <item name="AI" type="462c0819:PsiDirectoryNode" />
+              <item name="Railroad" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AI" type="462c0819:PsiDirectoryNode" />
               <item name="SliderLab" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -166,8 +167,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SliderLab/optimized.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Railroad/path.py" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
@@ -193,12 +195,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\dev\.virtualenvs\AI\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SliderLab" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Railroad" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SliderLab/opitimized2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Railroad/path.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -225,12 +227,12 @@
       <workItem from="1568142134235" duration="3939000" />
       <workItem from="1568674525206" duration="3094000" />
       <workItem from="1568677916530" duration="74512000" />
-      <workItem from="1570564040968" duration="1359000" />
+      <workItem from="1570564040968" duration="29560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93220000" />
+    <option name="totallyTimeSpent" value="121421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -245,12 +247,12 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49070632" visible="true" weight="0.17299919" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49253732" visible="true" weight="0.17299919" />
       <window_info id="Structure" order="1" sideWeight="0.5092937" side_tool="true" weight="0.17057396" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5074627" side_tool="true" weight="0.17299919" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899627" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33828998" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2992565" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.58178437" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -259,7 +261,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.37732342" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.20446096" />
       <window_info anchor="bottom" auto_hide="true" id="Python Console" order="12" weight="0.41078067" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -289,6 +291,11 @@
           <line>94</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Railroad/path.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -299,7 +306,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AI$tasks.coverage" NAME="eights Coverage Results" MODIFIED="1568141603455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SliderLab" />
-    <SUITE FILE_PATH="coverage/AI$eights.coverage" NAME="eights Coverage Results" MODIFIED="1570504304867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SliderLab" />
+    <SUITE FILE_PATH="coverage/AI$eights.coverage" NAME="eights Coverage Results" MODIFIED="1571158968135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Railroad" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -396,33 +403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WordLadder/ladders.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1968">
-          <caret line="83" column="77" selection-start-line="83" selection-start-column="77" selection-end-line="83" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SliderLab/optimized.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2328">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SliderLab/words.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SliderLab/quiz1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -443,12 +423,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SliderLab/opitimized2.py">
+    <entry file="file://$PROJECT_DIR$/SliderLab/optimized.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        <state relative-caret-position="24">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SliderLab/words.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordLadder/ladders.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3809">
+          <caret line="23" column="23" lean-forward="true" selection-start-line="4" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python37/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="323" selection-start-line="323" selection-end-line="323" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python37/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="2472" selection-start-line="2472" selection-end-line="2472" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Railroad/rrEdges.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Railroad/distanceDemo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SliderLab/opitimized2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="91" column="22" lean-forward="true" selection-start-line="65" selection-start-column="4" selection-end-line="91" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Railroad/rrNodes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="3816" column="8" selection-start-line="3816" selection-start-column="8" selection-end-line="3816" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Railroad/rrNodeCity.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Railroad/rrMapCoarse.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Railroad/path.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1272">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
