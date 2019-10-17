@@ -32,39 +32,49 @@ class Node:
         other.addEdge(self)
 
 
+def getpath(solset, goal, canv):
+    path = [str(goal[2])]
+    curr = goal[2]
+    while solset[curr.id] != None:
+        path.append(str(solset[curr.id]))
+        coords = (solset[curr.id].longitude + 130.357220) * 13, (60.846820 - solset[curr.id].latitude) * 15, (
+                curr.longitude + 130.357220) * 13, (60.846820 - curr.latitude) * 15
+        canv.create_line(coords, fill='blue')
+        curr = solset[curr.id]
+    print(path[::-1])
+    print("Distance: {} miles".format(goal[1]))
+
+
 def solve(root, goal, canv, top):
     if root == goal:
         return {}
     first = calcd(root.latitude, root.longitude, goal.latitude, goal.longitude)
-    openset = [(first, 0, root)]
+    openset = [(first, 0, root, None)]
+    heapq.heapify(openset)
     clsdset = {}
     solset = {}
     while True:
-        prev = openset.pop()
+        prev = heapq.heappop(openset)
         if prev[2].id not in clsdset:
             clsdset[prev[2].id] = prev[1]
             nbr = prev[2].con
+            solset[prev[2].id] = prev[3]
+            if prev[2].id == goal.id:
+                return getpath(solset, prev, canv, top)
             for st in nbr:
                 if st.id not in clsdset:
-                    if st.id == goal.id:
-                        clsdset[goal.id] = prev[1] + calcd(prev[2].latitude, prev[2].longitude, st.latitude,
-                                                           st.longitude)
-                        solset[goal.id] = prev[2]
-                        return solset
-                    openset.append((calcd(st.latitude, st.longitude, goal.latitude, goal.longitude),
-                                    prev[1] + calcd(prev[2].latitude, prev[2].longitude, st.latitude, st.longitude),
-                                    st))
-                    coords = (st.longitude - (-130.357220)) * 16, (60.846820 - st.latitude) * 16, (prev[2].longitude - (
-                        -130.357220)) * 16, (60.846820 - prev[2].latitude) * 16
-                    canv.create_line(coords, fill='blue')
-                    top.update()
-                    solset[st.id] = prev[2]
-            if prev[2] is not root:
-                coords = (prev[2].longitude - (-130.357220)) * 16 , (60.846820 - prev[2].latitude) * 16, (
-                            solset[prev[2].id].longitude - (-130.357220)) * 16, (60.846820 - solset[prev[2].id].latitude) * 16
-                canv.create_line(coords, fill='red')
+                    delta = calcd(st.latitude, st.longitude, prev[2].latitude, prev[2].longitude) + prev[1]
+                    heapq.heappush(openset, (
+                        calcd(st.latitude, st.longitude, goal.latitude,
+                              goal.longitude) + delta if st.id != goal.id else 0, delta, st, prev[2]))
+                    coords = (prev[2].longitude + 130.357220) * 13, (60.846820 - prev[2].latitude) * 15, (
+                            st.longitude + 130.357220) * 13, (60.846820 - st.latitude) * 15
+                    canv.create_line(coords, fill='red')
+        if prev[2] is not root:
+            coords = (prev[2].longitude + 130.357220) * 13, (60.846820 - prev[2].latitude) * 15, (
+                    prev[3].longitude + 130.357220) * 13, (60.846820 - prev[3].latitude) * 15
+            canv.create_line(coords, fill='green')
             top.update()
-        openset.sort(reverse=True)
 
 
 def main():
@@ -81,7 +91,7 @@ def main():
     for line in k:
         stations[line[0:7]].connect(stations[line[8:-1]])
     top = tk.Tk()
-    w = tk.Canvas(top, height=800, width=1200)
+    w = tk.Canvas(top, height=650, width=900)
     w.pack()
     # for i in stations.values():
     #     coords = (i.longitude - (-130.357220)) * 10 - 1, (60.846820 - i.latitude) * 10 - 1, (
@@ -89,22 +99,21 @@ def main():
     #     w.create_oval(coords)
     for i in stations.values():
         for z in i.con:
-            coords = (z.longitude - (-130.357220)) * 16, (60.846820 - z.latitude) * 16, (
-                    i.longitude - (-130.357220)) * 16, (60.846820 - i.latitude) * 16
+            coords = (z.longitude + 130.357220) * 13, (60.846820 - z.latitude) * 15, (
+                    i.longitude + 130.357220) * 13, (60.846820 - i.latitude) * 15
             w.create_line(coords)
 
-    # m = sys.argv[1]
-    # count=2
-    # while m not in citytoid:
-    #     m+=' '+sys.argv[count]
-    #     count+=1
-    # k=""
-    # for z in range(count, len(sys.argv)):
-    #     k+=sys.argv[z]+' '
+    m = sys.argv[1]
+    count=2
+    while m not in citytoid:
+        m+=' '+sys.argv[count]
+        count+=1
+    k=""
+    for z in range(count, len(sys.argv)):
+        k+=sys.argv[z]+' '
 
-    solve(stations[citytoid["Brooklyn"]], stations[citytoid["Los Angeles"]], w, top)
+    solve(stations[citytoid[m]], stations[citytoid[k[0:-1]]], w, top)
     top.mainloop()
-    print(max(stations.values(), key=lambda x: x.latitude).latitude)
 
 
 if __name__ == "__main__":
