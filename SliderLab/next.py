@@ -85,7 +85,7 @@ def printg(list, k=False):
 
 k = time.time()
 if len(sys.argv) > 2:
-    b = solve("FACDB_GHEIKJMLON", "ABCDEFGHIJKLMNO_")
+    b = solve(sys.argv[1], sys.argv[2])
 else:
     b = solve(sys.argv[1])
 k = time.time() - k

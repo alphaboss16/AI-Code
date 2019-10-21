@@ -33,16 +33,17 @@ class Node:
 
 
 def getpath(solset, goal, canv):
-    path = [str(goal[2])]
+    path = [goal[2]]
     curr = goal[2]
     while solset[curr.id] != None:
-        path.append(str(solset[curr.id]))
+        path.append(solset[curr.id])
         coords = (solset[curr.id].longitude + 130.357220) * 13, (60.846820 - solset[curr.id].latitude) * 15, (
                 curr.longitude + 130.357220) * 13, (60.846820 - curr.latitude) * 15
         canv.create_line(coords, fill='blue')
         curr = solset[curr.id]
-    print(path[::-1])
+
     print("Distance: {} miles".format(goal[1]))
+    return path[::-1]
 
 
 def solve(root, goal, canv, top):
@@ -53,28 +54,45 @@ def solve(root, goal, canv, top):
     heapq.heapify(openset)
     clsdset = {}
     solset = {}
+    count = 0
     while True:
         prev = heapq.heappop(openset)
         if prev[2].id not in clsdset:
-            clsdset[prev[2].id] = prev[1]
+            clsdset[prev[2].id] = prev[2]
             nbr = prev[2].con
             solset[prev[2].id] = prev[3]
             if prev[2].id == goal.id:
-                return getpath(solset, prev, canv, top)
+                for i in clsdset:
+                    for k in clsdset[i].con:
+                        if k.id in clsdset:
+                            coords = (clsdset[i].longitude + 130.357220) * 13, (60.846820 - clsdset[i].latitude) * 15, (
+                                    k.longitude + 130.357220) * 13, (60.846820 - k.latitude) * 15
+                            canv.create_line(coords, fill='green')
+                return getpath(solset, prev, canv)
             for st in nbr:
                 if st.id not in clsdset:
                     delta = calcd(st.latitude, st.longitude, prev[2].latitude, prev[2].longitude) + prev[1]
                     heapq.heappush(openset, (
                         calcd(st.latitude, st.longitude, goal.latitude,
-                              goal.longitude) + delta if st.id != goal.id else 0, delta, st, prev[2]))
+                              goal.longitude) + delta if st.id != goal.id else delta, delta, st, prev[2]))
                     coords = (prev[2].longitude + 130.357220) * 13, (60.846820 - prev[2].latitude) * 15, (
                             st.longitude + 130.357220) * 13, (60.846820 - st.latitude) * 15
                     canv.create_line(coords, fill='red')
-        if prev[2] is not root:
-            coords = (prev[2].longitude + 130.357220) * 13, (60.846820 - prev[2].latitude) * 15, (
-                    prev[3].longitude + 130.357220) * 13, (60.846820 - prev[3].latitude) * 15
-            canv.create_line(coords, fill='green')
+                    count += 1
+                else:
+                    coords = (prev[2].longitude + 130.357220) * 13, (60.846820 - prev[2].latitude) * 15, (
+                            st.longitude + 130.357220) * 13, (60.846820 - st.latitude) * 15
+                    canv.create_line(coords, fill='green')
+                    count += 1
+        for i in prev[2].con:
+            if i.id in clsdset:
+                coords = (prev[2].longitude + 130.357220) * 13, (60.846820 - prev[2].latitude) * 15, (
+                        i.longitude + 130.357220) * 13, (60.846820 - i.latitude) * 15
+                canv.create_line(coords, fill='green')
+                count += 1
+        if count > first * 4:
             top.update()
+            count = 0
 
 
 def main():
@@ -104,15 +122,25 @@ def main():
             w.create_line(coords)
 
     m = sys.argv[1]
-    count=2
+    count = 2
     while m not in citytoid:
-        m+=' '+sys.argv[count]
-        count+=1
-    k=""
+        m += ' ' + sys.argv[count]
+        count += 1
+    k = ""
     for z in range(count, len(sys.argv)):
-        k+=sys.argv[z]+' '
+        k += sys.argv[z] + ' '
 
-    solve(stations[citytoid[m]], stations[citytoid[k[0:-1]]], w, top)
+    solution = solve(stations[citytoid[m]], stations[citytoid[k[0:-1]]], w, top)
+    print("{} stations".format(len(solution) - 1))
+    new = []
+    for i in range(len(solution)):
+        new.append(str(solution[i]))
+    print(new)
+    print(str(solution[0]) + '\t\t\t' + str(0) + " miles")
+    for i in range(1, len(solution)):
+        print(str(solution[i]) + '\t\t\t' + str(
+            calcd(solution[i].latitude, solution[i].longitude, solution[i - 1].latitude,
+                  solution[i - 1].longitude)) + " miles")
     top.mainloop()
 
 
