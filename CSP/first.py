@@ -28,7 +28,7 @@ def bruteForce(puzzle, choice, check):
         return ""
     else:
         k = puzzle.index('.')
-        for i in range(1, 9):
+        for i in range(1, 8):
             b = bruteForce(puzzle[0:k] + str(i) + puzzle[k + 1:], choice, check)
             if b != "":
                 return b
@@ -61,12 +61,13 @@ def main():
         choice = sys.argv[2]
     else:
         choice = "A"
-    puzzle = "........................"
+    puzzle = sys.argv[1]
     check = createbucks(choice)
     done = bruteForce(puzzle, choice, check)
     if done == "":
         print("No Solution")
     else:
+        print(done)
         print(" "+done[:5])
         print(done[5:12])
         print(done[12:19])
