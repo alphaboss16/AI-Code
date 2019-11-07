@@ -90,7 +90,7 @@ def solve(root, goal, canv, top):
                         i.longitude + 130.357220) * 13, (60.846820 - i.latitude) * 15
                 canv.create_line(coords, fill='green')
                 count += 1
-        if count > first*3 or len(clsdset)<10:
+        if count > first or len(clsdset)<10:
             top.update()
             count = 0
 

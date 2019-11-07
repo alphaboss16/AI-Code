@@ -36,7 +36,6 @@ def setglobals(puzzle):
                     CONSTRAINTS[i].add(z)
 
 
-
 def isInvalid(puzzle, lastchanged):
     if lastchanged is not None:
         i = lastchanged
@@ -48,11 +47,16 @@ def isInvalid(puzzle, lastchanged):
                 return True
     return False
 
+
 def checksum(puzzle):
     s = 0
     for i in range(len(puzzle)):
-        s+=ord(puzzle[i])
-    return s-48*(int(N**2))
+        s += ord(puzzle[i])
+    return s - 48 * (int(N ** 2))
+
+
+
+
 
 def bruteForce(puzzle, last):
     if isInvalid(puzzle, last):
@@ -60,8 +64,8 @@ def bruteForce(puzzle, last):
     elif puzzle.count('.') == 0:
         return puzzle
     k = puzzle.index('.')
-    for i in len(SYMSET):
-        b = bruteForce(puzzle[0:k] + SYMSET[i] + puzzle[k + 1:], i)
+    for i in SYMSET:
+        b = bruteForce(puzzle[0:k] + i + puzzle[k + 1:], k)
         if b != "":
             return b
     return ""
@@ -73,10 +77,11 @@ def main():
     count = 1
     for line in file:
         z = time.time()
-        puzzle = line[:-1]
+        periods = []
+        puzzle=line[:-1]
         setglobals(puzzle)
         done = bruteForce(puzzle, None)
-        chk= checksum(done)
+        chk = checksum(done)
         print("Puzzle Count: {} {} Time: {}s Checksum: {}".format(count, done, round(time.time() - z, 2), chk))
         count += 1
     print("Time: {}".format(round(time.time() - k, 2)))
