@@ -119,7 +119,7 @@ def main():
         # print(
         #     "Puzzle Count: {} {} {} Time: {}s Checksum: {}".format(count, puzzle, done, round(time.time() - z, 2),
         #                                                            chk))
-    print("Time: {}".format(round(time.time() - k, 2)))
+    print("Time: {}s".format(round(time.time() - k, 2)))
 
 
 if __name__ == "__main__":
