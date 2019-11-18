@@ -59,25 +59,25 @@ def getPossible(puzzle, pos):
     check = {}
     minpos = 0
     for i in range(len(pos)):
-        sym = set()
-        for k in CONSTRAINTS[pos[i]]:
-            sym.add(puzzle[k])
-        check[pos[i]] = SYMSET - sym
-        if len(check[pos[i]]) < len(check[pos[minpos]]):
+        check[pos[i]] = {puzzle[k] for k in CONSTRAINTS[pos[i]] if puzzle[k]!='.'}
+        if len(check[pos[i]])== len(SYMSET):
+            return None
+        if len(check[pos[i]]) == len(SYMSET) - 1:
+            return SYMSET - check[pos[i]], pos.pop(i)
+        if len(check[pos[i]]) >len(check[pos[minpos]]):
             minpos = i
-    return check[pos[minpos]], pos.pop(minpos)
+    return SYMSET - check[pos[minpos]], pos.pop(minpos)
 
 
-
-def bruteForce(puzzle, last, positions):
-    if isInvalid(puzzle, last):
-        return ""
-    elif puzzle.count('.') == 0:
+def bruteForce(puzzle, positions):
+    if len(positions) == 0:
         return puzzle
     copy = positions[:]
     k = getPossible(puzzle, copy)
+    if k is None:
+        return ""
     for i in k[0]:
-        b = bruteForce(puzzle[0:k[1]] + i + puzzle[k[1] + 1:], k[1], copy)
+        b = bruteForce(puzzle[0:k[1]] + i + puzzle[k[1] + 1:], copy)
         if b != "":
             return b
     return ""
@@ -95,7 +95,7 @@ def main():
             if puzzle[i] == '.':
                 periods.append(i)
         setglobals(puzzle)
-        done = bruteForce(puzzle, None, periods)
+        done = bruteForce(puzzle, periods)
         chk = checksum(done)
         print("Puzzle Count: {} {} Time: {}s Checksum: {}".format(count, done, round(time.time() - z, 2), chk))
         count += 1

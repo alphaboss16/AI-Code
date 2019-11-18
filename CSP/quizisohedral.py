@@ -3,6 +3,7 @@ import sys
 groups = {}
 curr = set()
 
+
 def isInvalid(puzzle, check):
     global groups
     for k in puzzle:
