@@ -61,7 +61,7 @@ def getPossible(puzzle, pos):
     for j in CONSTRAINT_SETS:
         for m in SYMSET - {puzzle[k] for k in j}:
             locations = {loc for loc in j if puzzle[loc] == '.' and m not in {puzzle[z] for z in CONSTRAINTS[loc]}}
-            if len(locations) < t and len(locations) != 0:
+            if len(locations) < t:
                 return locations, m, False
     return t1, pos.pop(minpos), True
 
@@ -96,7 +96,7 @@ def main():
     for line in file:
         z = time.time()
         periods = []
-        puzzle = line[0:-1]
+        puzzle = line[0:-1] if line[-1]=='\n' else line
         for i in range(len(puzzle)):
             if puzzle[i] == '.':
                 periods.append(i)

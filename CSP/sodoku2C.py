@@ -2,7 +2,7 @@ import time
 
 
 def setglobals(puzzle):
-    global N, SYMSET, subBlockHeight, subBlockWidth, CONSTRAINTS
+    global N, SYMSET, subBlockHeight, subBlockWidth, CONSTRAINTS, CONSTRAINT_SETS
     N = int(len(puzzle) ** .5)
     total = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
     SYMSET = set(total[0:N])
@@ -28,6 +28,7 @@ def setglobals(puzzle):
                 for l in range(subBlockWidth):
                     sub.append((i * subBlockWidth + l) + (j * subBlockHeight + k) * N)
             total.append(sub)
+    CONSTRAINT_SETS=total
     CONSTRAINTS = {x: set() for x in range(int(N ** 2))}
     for i in range(int(N ** 2)):
         for k in total:
@@ -57,29 +58,25 @@ def checksum(puzzle):
 
 
 def getPossible(puzzle, pos, prev, last):
-    opp = [(999, x, []) for x in SYMSET]
     check = {}
     minpos = 0
     if last == -1:
         for i in range(len(pos)):
-            check[pos[i]] = prev[pos[i]]
-            for b in opp:
-                if b[1] in check:
-                    if b[0] == 999:
-                        b[0] = 1
-                    else:
-                        b[0] += 1
-                    b[2].append(pos[i])
-            if len(check[pos[i]]) == 0:
+            check[pos[i]] = {puzzle[k] for k in CONSTRAINTS[pos[i]] if puzzle[k] != '.'}
+            if len(check[pos[i]]) == len(SYMSET):
                 return None
-            if len(check[pos[i]]) == 1:
-                return check[pos[i]], pos.pop(i), True, prev
-            if len(check[pos[i]]) < len(check[pos[minpos]]):
+            if len(check[pos[i]]) == len(SYMSET) - 1:
+                return SYMSET - check[pos[i]], pos.pop(i), True
+            if len(check[pos[i]]) > len(check[pos[minpos]]):
                 minpos = i
-        b = min(opp)
-        if b[0] < len(check[pos[minpos]]):
-            return b[1], b[2], False, prev
-        return check[pos[minpos]], pos.pop(minpos), True, prev
+        t1 = SYMSET - check[pos[minpos]]
+        t = len(t1)
+        for j in CONSTRAINT_SETS:
+            for m in SYMSET - {puzzle[k] for k in j}:
+                locations = {loc for loc in j if puzzle[loc] == '.' and m not in {puzzle[z] for z in CONSTRAINTS[loc]}}
+                if len(locations) < t and len(locations) != 0:
+                    return locations, m, False
+        return t1, pos.pop(minpos), True
     for i in pos_to_change[last]:
         prev[i] -= {puzzle[last]}
 
@@ -92,12 +89,12 @@ def getPossible(puzzle, pos, prev, last):
                 else:
                     b[0] += 1
                 b[2].append(pos[i])
-    if len(check[pos[i]]) == 0:
-        return None
-    if len(check[pos[i]]) == 1:
-        return check[pos[i]], pos.pop(i), True, prev
-    if len(check[pos[i]]) < len(check[pos[minpos]]):
-        minpos = i
+        if len(check[pos[i]]) == 0:
+            return None
+        if len(check[pos[i]]) == 1:
+            return check[pos[i]], pos.pop(i), True, prev
+        if len(check[pos[i]]) < len(check[pos[minpos]]):
+            minpos = i
     b = min(opp)
     if b[0] < len(check[pos[minpos]]):
         return b[1], b[2], False, prev
