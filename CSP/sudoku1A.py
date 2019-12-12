@@ -21,13 +21,12 @@ def setglobals(puzzle):
         total.append(sub2)
     subBlockHeight = int(check)
     subBlockWidth = N // subBlockHeight
-    for i in range(N // subBlockWidth):
-        for j in range(N // subBlockHeight):
-            sub = []
-            for k in range(subBlockHeight):
-                for l in range(subBlockWidth):
-                    sub.append((i * subBlockWidth + l) + (j * subBlockHeight + k) * N)
-            total.append(sub)
+    new = [[0, 1, 2, 9, 18, 27, 28, 37, 38], [3, 4, 5, 6, 7, 11, 12, 16, 21], [10, 19, 20, 29, 30, 39, 40, 41, 48],
+           [8, 13, 14, 15, 17, 22, 24, 25, 26], [23, 31, 32, 33, 42, 43, 49, 50, 51],
+           [34, 35, 44, 52, 53, 59, 60, 61, 70], [36, 45, 46, 54, 63, 65, 72, 73, 74],
+           [47, 55, 56, 57, 64, 66, 75, 76, 77], [58, 67, 68, 69, 78, 74, 80, 71, 62]]
+    for i in new:
+        total.append(i)
     CONSTRAINTS = {x: [] for x in range(int(N ** 2))}
     for i in range(int(N ** 2)):
         for k in total:

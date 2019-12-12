@@ -82,13 +82,6 @@ def getPossible(puzzle, pos, prev, last):
 
     for i in range(len(pos)):
         check[pos[i]] = prev[pos[i]]
-        for b in opp:
-            if b[1] in check:
-                if b[0] == 999:
-                    b[0] = 1
-                else:
-                    b[0] += 1
-                b[2].append(pos[i])
         if len(check[pos[i]]) == 0:
             return None
         if len(check[pos[i]]) == 1:
