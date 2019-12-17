@@ -109,9 +109,13 @@ def show_moves():
                             col += 1
     return moves
 
+def play_on_board()
 
 def main():
     global board, convert, turn, reverse
+    for i in range(1,len(sys.argv)):
+        if len(sys.argv[i])==64:
+            board = sys.argv[i]
     if len(sys.argv) > 1:
         if len(sys.argv[1]) > 1:
             board = sys.argv[1].lower()
@@ -121,6 +125,8 @@ def main():
             turn = sys.argv[2].lower()
         else:
             turn = 'x' if board.count('.') % 2 == 0 else 'o'
+
+
     else:
         board = '.' * 27 + "ox......xo" + '.' * 27
         turn = 'x'
