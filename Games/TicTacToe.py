@@ -32,7 +32,7 @@ def set_look_up(win, height, width):
     for i in range(width * height):
         for j in sets:
             if i in j:
-                total[i].append(j):
+                total[i].append(j)
 
 
 def is_win(board, last):
