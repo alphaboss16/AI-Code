@@ -293,7 +293,7 @@ def main():
             reverse[convert[i][j]] = (i, j)
     board = None
     turn = None
-    move = None
+    move = []
     translate = {"a": 0, "b": 1, "c": 2, "d": 3, "e": 4, "f": 5, "g": 6, "h": 7}
     for i in range(1, len(sys.argv)):
         if len(sys.argv[i]) == 64:
@@ -301,12 +301,13 @@ def main():
         elif sys.argv[i].lower() == 'x' or sys.argv[i].lower() == 'o':
             turn = sys.argv[i].lower()
         else:
-            move = sys.argv[i].lower()
-            if move[0] in translate:
-                n = (int(move[1]) - 1) * 8 + translate[move[0]]
-            else:
-                n = int(move)
-            move = n
+            k = sys.argv[i].lower()
+            if k[0] in translate:
+                n = (int(k[1]) - 1) * 8 + translate[k[0]]
+                move.append(n)
+            elif int(k) > -1:
+                n = int(k)
+                move.append(n)
     if board is None:
         board = '.' * 27 + 'ox......xo' + '.' * 27
     if turn is None:
@@ -320,13 +321,13 @@ def main():
                 turn = 'o'
             elif len(show_moves('x')) > 0:
                 turn = 'x'
-    if move is None:
+    if len(move) == 0:
         k = show_moves(turn)
         fin = [*board]
         for i in k:
             fin[i] = '*'
         print_board("".join(fin))
-        print("{} {}/{}".format("".join(fin), fin.count('x'), fin.count('o')))
+        print("{} {}/{}".format(board, fin.count('x'), fin.count('o')))
         print("Possible Moves for {}: {}".format(turn, k))
     else:
         k = show_moves(turn)
@@ -334,35 +335,37 @@ def main():
         for i in k:
             fin[i] = '*'
         print_board("".join(fin))
-        print("{} {}/{}".format("".join(fin), fin.count('x'), fin.count('o')))
+        print("{} {}/{}".format(board, fin.count('x'), fin.count('o')))
         print("Possible moves for {}: {}".format(turn, k))
-        print("{} plays to {}".format(turn, move))
-        b = play_to(move, turn)
-        fin = [*board]
-        for i in b:
-            fin[i] = turn
-        board = ''.join(fin)
-        k = show_moves('x' if turn == 'o' else 'o')
-        if len(k) > 0:
-            turn = 'x' if turn == 'o' else 'o'
+        for j in move:
+            print("{} plays to {}".format(turn, j))
+            b = play_to(j, turn)
             fin = [*board]
-            for i in k:
-                fin[i] = '*'
-            print_board("".join(fin))
-            print("{} {}/{}".format("".join(fin), fin.count('x'), fin.count('o')))
-            print("Possible moves for {}: {}".format(turn, k))
-        else:
-            b = show_moves(turn)
-            if len(b) == 0:
-                print("{} {}/{}".format("".join(fin), fin.count('x'), fin.count('o')))
-                print_board(board)
-            else:
+            for i in b:
+                fin[i] = turn
+            board = ''.join(fin)
+            k = show_moves('x' if turn == 'o' else 'o')
+            if len(k) > 0:
+                turn = 'x' if turn == 'o' else 'o'
                 fin = [*board]
-                for i in b:
+                for i in k:
                     fin[i] = '*'
                 print_board("".join(fin))
-                print("{} {}/{}".format("".join(fin), fin.count('x'), fin.count('o')))
-                print("Possible moves for {}: {}".format(turn, b))
+                print("{} {}/{}".format(board, fin.count('x'), fin.count('o')))
+                print("Possible moves for {}: {}".format(turn, k))
+            else:
+                b = show_moves(turn)
+                if len(b) == 0:
+                    print("{} {}/{}".format(board, fin.count('x'), fin.count('o')))
+                    print_board(board)
+                    break
+                else:
+                    fin = [*board]
+                    for i in b:
+                        fin[i] = '*'
+                    print_board("".join(fin))
+                    print("{} {}/{}".format(board, fin.count('x'), fin.count('o')))
+                    print("Possible moves for {}: {}".format(turn, b))
 
 
 if __name__ == '__main__':
