@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b730fec9-e1c7-493a-9ee4-b86804c4529a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Games/Othello/othello3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/Othello/othello4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Games/Othello/othello2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Games/Othello/othello2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,34 +28,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Games/Othello/othello1.py">
+        <entry file="file://$PROJECT_DIR$/Games/Othello/othello2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3312">
-              <caret line="138" selection-start-line="138" selection-end-line="142" selection-end-column="16" />
+            <state relative-caret-position="-819">
+              <caret line="274" column="15" lean-forward="true" selection-start-line="112" selection-end-line="274" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Games/Othello/othello2.py">
+        <entry file="file://$PROJECT_DIR$/Games/Othello/othello3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7848">
-              <caret line="327" column="33" selection-end-line="369" />
+            <state relative-caret-position="2">
+              <caret line="282" column="32" lean-forward="true" selection-start-line="282" selection-start-column="32" selection-end-line="282" selection-end-column="32" />
+              <folding>
+                <element signature="e#166#5116#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Games/Othello/othello3.py">
+        <entry file="file://$PROJECT_DIR$/Games/Othello/othello4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="286" selection-start-line="286" selection-end-line="286" />
+            <state relative-caret-position="216">
+              <caret line="355" column="52" lean-forward="true" selection-start-line="355" selection-start-column="52" selection-end-line="355" selection-end-column="52" />
               <folding>
-                <element signature="e#39#5133#0" />
-                <element signature="e#166#5116#0" />
-                <element signature="e#5165#10662#0" />
-                <element signature="e#10692#10828#0" />
-                <element signature="e#10847#13874#0" />
+                <element signature="e#35#5135#0" />
+                <element signature="e#5286#10879#0" />
               </folding>
             </state>
           </provider>
@@ -127,10 +126,11 @@
         <option value="$PROJECT_DIR$/Games/Othello/othello1.py" />
         <option value="$PROJECT_DIR$/Games/Othello/othello2.py" />
         <option value="$PROJECT_DIR$/Games/Othello/othello3.py" />
+        <option value="$PROJECT_DIR$/Games/Othello/othello4.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="666" />
     <option name="y" value="-30" />
     <option name="width" value="1098" />
@@ -142,6 +142,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,7 +179,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,6 +284,7 @@
       <workItem from="1575403770343" duration="25365000" />
       <workItem from="1576612734717" duration="15448000" />
       <workItem from="1578423048260" duration="255000" />
+      <workItem from="1578872247578" duration="13076000" />
     </task>
     <task id="LOCAL-00001" summary="nothing lol">
       <created>1571159164634</created>
@@ -338,7 +339,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296408000" />
+    <option name="totallyTimeSpent" value="309484000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -351,8 +352,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49253732" visible="true" weight="0.18835893" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49253732" visible="true" weight="0.19159256" />
       <window_info id="Structure" order="1" sideWeight="0.5092937" side_tool="true" weight="0.17057396" />
       <window_info id="Favorites" order="2" sideWeight="0.5074627" side_tool="true" weight="0.17299919" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -366,7 +368,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899627" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5012126" side_tool="true" weight="0.232342" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4987874" weight="0.06877323" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4987874" visible="true" weight="0.055762082" />
       <window_info anchor="bottom" auto_hide="true" id="Python Console" order="12" weight="0.2063197" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -954,28 +956,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Games/Othello/othello1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3312">
-          <caret line="138" selection-start-line="138" selection-end-line="142" selection-end-column="16" />
+        <state relative-caret-position="165">
+          <caret line="127" column="18" lean-forward="true" selection-end-line="147" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Games/Othello/othello2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7848">
-          <caret line="327" column="33" selection-end-line="369" />
+        <state relative-caret-position="-819">
+          <caret line="274" column="15" lean-forward="true" selection-start-line="112" selection-end-line="274" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Games/Othello/othello3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="286" selection-start-line="286" selection-end-line="286" />
+        <state relative-caret-position="2">
+          <caret line="282" column="32" lean-forward="true" selection-start-line="282" selection-start-column="32" selection-end-line="282" selection-end-column="32" />
           <folding>
-            <element signature="e#39#5133#0" />
             <element signature="e#166#5116#0" />
-            <element signature="e#5165#10662#0" />
-            <element signature="e#10692#10828#0" />
-            <element signature="e#10847#13874#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Games/Othello/othello4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="355" column="52" lean-forward="true" selection-start-line="355" selection-start-column="52" selection-end-line="355" selection-end-column="52" />
+          <folding>
+            <element signature="e#35#5135#0" />
+            <element signature="e#5286#10879#0" />
           </folding>
         </state>
       </provider>
