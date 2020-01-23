@@ -391,65 +391,48 @@ def pick_ideal(moves, board, turn):
         return tot
 
 
-def negamax(brd, tkn, level, last=None):
+def alpha_beta(brd, tkn, level, lower, upper, last=None):
     global prev
-    enemy = 'o' if tkn == 'x' else 'x'
-    # return list of [guaranteed min score, reversed move score]
     if brd in prev:
         if tkn in prev[brd]:
-            if len(prev[brd][tkn]) == 1:
-                return prev[brd][tkn]
-            return [prev[brd][tkn][0] * (-1)] + prev[brd][tkn][1:]
-    if last:
-        best = [len(brd)]
-        if brd not in prev:
-            prev[brd] = {}
-        if tkn not in prev[brd]:
-            for mv in last:
-                nm = negamax(play_to(mv, tkn, brd), enemy, level + 1) + [mv]
-                if nm[0] < best[0]:
-                    best = nm
-                    if level == 1:
-                        print("Score: {} {}".format((-1) * best[0], str(best[1:])))
-            prev[brd][tkn] = best
-        return [(-1) * best[0]] + best[1:]
-    moves = show_moves(brd, tkn)
-    moves2 = show_moves(brd, enemy)
-    if len(moves) == 0 and len(moves2) == 0:
-        if brd not in prev:
-            prev[brd] = {}
-        if tkn not in prev[brd]:
-            prev[brd][tkn] = [brd.count(tkn) - brd.count(enemy)]
-            prev[brd][enemy] = [brd.count(enemy) - brd.count(tkn)]
-        return prev[brd][tkn]
-    if len(moves) == 0:
-        f = negamax(brd, enemy, level + 1, moves2) + [-1]
-        if brd not in prev:
-            prev[brd] = {}
-        if tkn not in prev[brd]:
-            prev[brd][tkn] = f
-        return [(-1) * f[0]] + f[1:]
-    best = [len(brd)]
-    if brd not in prev:
+            moves = prev[brd][tkn]
+        else:
+            moves = show_moves(brd, tkn)
+            prev[brd][tkn] = moves
+    else:
         prev[brd] = {}
-    if tkn not in prev[brd]:
-        for mv in moves:
-            nm = negamax(play_to(mv, tkn, brd), enemy, level + 1) + [mv]
-            if nm[0] < best[0]:
-                best = nm
-                if level == 1:
-                    print("Score: {} {}".format((-1) * best[0], str(best[1:])))
-        prev[brd][tkn] = best
-    return [(-1) * best[0]] + best[1:]
+        moves = show_moves(brd, tkn)
+        prev[brd][tkn] = moves
 
+    enemy = 'o' if tkn == 'x' else 'x'
+    best = [lower - 1]
+    if len(moves) == 0:
+        if enemy in prev[brd]:
+            moves2 = prev[brd][enemy]
+        else:
+            moves2 = show_moves(brd, enemy)
+            prev[brd][enemy] = moves2
+        if len(moves2) == 0:
+            return [brd.count(tkn) - brd.count(enemy)]
+        nm = alpha_beta(brd, enemy, level + 1, (-1) * upper, (-1) * lower)
+        score = (-1) * nm[0]
+        if score > upper:
+            return [score]
+        best = [score] + nm[1:] + [-1]
+        return best
 
-def print_board(game):
-    global convert
-    for i in convert:
-        temp = []
-        for j in i:
-            temp.append(game[j])
-        print(''.join(temp))
+    for mv in moves:
+        nm = alpha_beta(play_to(mv, tkn, brd), enemy, level + 1, (-1) * upper, (-1) * lower)
+        score = (-1) * nm[0]
+        if score > upper:
+            return [score]
+        if score < lower:
+            continue
+        best = [score] + nm[1:] + [mv]
+        if level == 1:
+            print("Score: {} {}".format(best[0], str(best[1:])))
+        lower = score + 1
+    return best
 
 
 def main():
@@ -484,13 +467,10 @@ def main():
         # for i in k:
         #     fin[i] = '*'
         # print("".join(fin))
-        print_board(board)
-        print()
-        print("{} {}/{}".format(board, board.count('x'), board.count('o')))
         print(k)
         print("My move is {}".format(z))
-        if board.count('.') < 11:
-            z = negamax(board, turn, 1)
+        if board.count('.') < 14:
+            z = alpha_beta(board, turn, 1, -64, 64)
             print("Score: {} {}".format(z[0], str(z[1:])))
 
 
