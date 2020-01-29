@@ -1,11 +1,5 @@
 import sys
 
-global corner, near, edges
-corner = {0, 7, 56, 63}
-near = {0: [1, 8, 9], 7: [6, 14, 15], 56: [48, 49, 57], 63: [62, 54, 55]}
-edges = [[0, 1, 2, 3, 4, 5, 6, 7], [0, 8, 16, 24, 32, 40, 48, 56], [7, 15, 23, 31, 39, 47, 55, 63],
-         [56, 57, 58, 59, 60, 61, 62, 63]]
-
 
 def show_moves(board, turn):
     global convert, reverse
@@ -392,7 +386,6 @@ def pick_ideal(moves, board, turn):
 
 
 def alpha_beta(brd, tkn, level, lower, upper, last=None):
-    global prev, saved_moves
     saved_lower = lower
     if (brd, tkn, lower, upper) in prev:
         return prev[(brd, tkn, lower, upper)]
@@ -432,52 +425,55 @@ def alpha_beta(brd, tkn, level, lower, upper, last=None):
         if score < lower:
             continue
         best = [score] + nm[1:] + [mv]
-        if level == 1:
-            print("Score: {} {}".format(best[0], str(best[1:])))
+        # if level == 1:
+        #     print("Score: {} {}".format(best[0], str(best[1:])))
         lower = score + 1
     prev[(brd, tkn, saved_lower, upper)] = best
     return prev[(brd, tkn, saved_lower, upper)]
 
 
-def main():
-    global convert, reverse, prev, saved_moves
-    saved_moves = {}
-    prev = {}
-    if len(sys.argv) > 1:
-        if len(sys.argv[1]) > 1:
-            board = sys.argv[1].lower()
-        else:
-            board = '.' * 27 + "ox......xo" + '.' * 27
-        if len(sys.argv) > 2:
-            turn = sys.argv[2].lower()
-        else:
-            turn = 'x' if board.count('.') % 2 == 0 else 'o'
-
-
-    else:
-        board = '.' * 27 + "ox......xo" + '.' * 27
-        turn = 'x'
+class Strategy():
+    global reverse, convert, saved_moves, prev, fix
+    global corner, near, edges
+    corner = {0, 7, 56, 63}
+    near = {0: [1, 8, 9], 7: [6, 14, 15], 56: [48, 49, 57], 63: [62, 54, 55]}
+    edges = [[0, 1, 2, 3, 4, 5, 6, 7], [0, 8, 16, 24, 32, 40, 48, 56], [7, 15, 23, 31, 39, 47, 55, 63],
+             [56, 57, 58, 59, 60, 61, 62, 63]]
+    global prev, saved_moves
+    try:
+        len(prev)
+    except:
+        prev={}
+    try:
+        len(saved_moves)
+    except:
+        saved_moves={}
     convert = [[x * 8 + y for y in range(8)] for x in range(8)]
     reverse = {}
     for i in range(len(convert)):
         for j in range(len(convert[i])):
             reverse[convert[i][j]] = (i, j)
-    k = show_moves(board, turn)
-    if len(k) == 0:
-        print(board)
-        print("No moves possible")
-    else:
-        z = pick_ideal(k, board, turn)
-        # fin = [*board]
-        # for i in k:
-        #     fin[i] = '*'
-        # print("".join(fin))
-        print(k)
-        print("My move is {}".format(z))
-        if board.count('.') < 14:
-            z = alpha_beta(board, turn, 1, -64, 64)
-            print("Score: {} {}".format(z[0], str(z[1:])))
-
-
-if __name__ == '__main__':
-    main()
+    count = 0
+    fix = {}
+    for i in range(0, 10):
+        for j in range(0, 10):
+            b = i * 10 + j
+            a = b // 10
+            if a > 8 or a < 1:
+                continue
+            c = b % 10
+            if c > 8 or c < 1:
+                continue
+            fix[count] = b
+            count += 1
+    def best_strategy(self, board, player, best_move, still_running):
+        fix[-1]= -1
+        brd = (''.join([x for x in [*board] if x != '?'])).replace('@', 'x')
+        tkn = player.replace('@', 'x')
+        m = show_moves(brd, tkn)
+        if len(m) == 0:
+            best_move.value = -1
+        else:
+            best_move.value = fix[pick_ideal(m, brd, tkn)]
+            if board.count('.') < 14:
+                best_move.value = fix[alpha_beta(brd, tkn, 1, -64, 64)[-1]]

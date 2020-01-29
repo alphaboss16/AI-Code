@@ -400,35 +400,23 @@ def negamax(brd, tkn, level, last=None):
             if len(prev[brd][tkn]) == 1:
                 return prev[brd][tkn]
             return [prev[brd][tkn][0] * (-1)] + prev[brd][tkn][1:]
-    if last:
-        best = [len(brd)]
-        if brd not in prev:
-            prev[brd] = {}
-        if tkn not in prev[brd]:
-            for mv in last:
-                nm = negamax(play_to(mv, tkn, brd), enemy, level + 1) + [mv]
-                if nm[0] < best[0]:
-                    best = nm
-                    if level == 1:
-                        print("Score: {} {}".format((-1) * best[0], str(best[1:])))
-            prev[brd][tkn] = best
-        return [(-1) * best[0]] + best[1:]
     moves = show_moves(brd, tkn)
-    moves2 = show_moves(brd, enemy)
-    if len(moves) == 0 and len(moves2) == 0:
-        if brd not in prev:
-            prev[brd] = {}
-        if tkn not in prev[brd]:
-            prev[brd][tkn] = [brd.count(tkn) - brd.count(enemy)]
-            prev[brd][enemy] = [brd.count(enemy) - brd.count(tkn)]
-        return prev[brd][tkn]
     if len(moves) == 0:
-        f = negamax(brd, enemy, level + 1, moves2) + [-1]
-        if brd not in prev:
-            prev[brd] = {}
-        if tkn not in prev[brd]:
-            prev[brd][tkn] = f
-        return [(-1) * f[0]] + f[1:]
+        moves2 = show_moves(brd, enemy)
+        if len(moves2) == 0:
+            if brd not in prev:
+                prev[brd] = {}
+            if tkn not in prev[brd]:
+                prev[brd][tkn] = [brd.count(tkn) - brd.count(enemy)]
+                prev[brd][enemy] = [brd.count(enemy) - brd.count(tkn)]
+            return prev[brd][tkn]
+        else:
+            f = negamax(brd, enemy, level + 1, moves2) + [-1]
+            if brd not in prev:
+                prev[brd] = {}
+            if tkn not in prev[brd]:
+                prev[brd][tkn] = f
+            return [(-1) * f[0]] + f[1:]
     best = [len(brd)]
     if brd not in prev:
         prev[brd] = {}
