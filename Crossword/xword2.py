@@ -2,12 +2,13 @@ import sys
 import re
 import random
 
-global convert, reverse, words
+global convert, reverse, words, to_fill
 table = {}
 convert = {}
 reverse = {}
 rev = []
 words = 0
+to_fill = {}
 
 
 def print_board(dims, st):
@@ -177,46 +178,46 @@ def recurse(brd, count, dims):
             return brd
         else:
             return None
-    checked = set()
-    while len(checked)<len(brd):
-        x = random.randint(0, len(brd)-1)
-        if brd[x] == '-' and brd[rev[x]] == '-' and x not in checked:
-            i = reverse[x][0]
-            j = reverse[x][1]
-            refix = brd[0:convert[i][j]] + '#' + brd[convert[i][j] + 1:]
-            refix = refix[0:rev[convert[i][j]]] + "#" + refix[rev[convert[i][j]] + 1:]
-            b = add_implied([*refix], dims)
-            if not b:
-                checked.add(x)
-                continue
-            fake = False
-            for e in range(len(rev) // 2):
-                if b[0][e] == '#':
-                    if b[0][rev[e]] != '#':
-                        fake = True
-                        break
-                elif b[0][rev[e]] == '#':
-                    if b[0][e] != "#":
-                        fake = True
-                        break
-            if fake:
-                checked.add(x)
-                continue
-            if b[1]:
-                b = add_implied(b[0], dims)
-            z = b[0].index('-')
-            m = [x for x in b[0]]
-            area_fill(m, dims, reverse[z][0], reverse[z][1])
-            if m.count('*') != (b[0].count('-') + words):
-                checked.add(x)
-                continue
-            if count - b[0].count('#') < 0:
-                checked.add(x)
-                continue
-            temp = recurse(''.join(b[0]), count, dims)
-            if temp:
-                return temp
-            checked.add(x)
+    # checked = set()
+    # while len(checked)<len(brd):
+    #     x = random.randint(0, len(brd)-1)
+    #     if brd[x] == '-' and brd[rev[x]] == '-' and x not in checked:
+    #         i = reverse[x][0]
+    #         j = reverse[x][1]
+    #         refix = brd[0:convert[i][j]] + '#' + brd[convert[i][j] + 1:]
+    #         refix = refix[0:rev[convert[i][j]]] + "#" + refix[rev[convert[i][j]] + 1:]
+    #         b = add_implied([*refix], dims)
+    #         if not b:
+    #             checked.add(x)
+    #             continue
+    #         fake = False
+    #         for e in range(len(rev) // 2):
+    #             if b[0][e] == '#':
+    #                 if b[0][rev[e]] != '#':
+    #                     fake = True
+    #                     break
+    #             elif b[0][rev[e]] == '#':
+    #                 if b[0][e] != "#":
+    #                     fake = True
+    #                     break
+    #         if fake:
+    #             checked.add(x)
+    #             continue
+    #         if b[1]:
+    #             b = add_implied(b[0], dims)
+    #         z = b[0].index('-')
+    #         m = [x for x in b[0]]
+    #         area_fill(m, dims, reverse[z][0], reverse[z][1])
+    #         if m.count('*') != (b[0].count('-') + words):
+    #             checked.add(x)
+    #             continue
+    #         if count - b[0].count('#') < 0:
+    #             checked.add(x)
+    #             continue
+    #         temp = recurse(''.join(b[0]), count, dims)
+    #         if temp:
+    #             return temp
+    #         checked.add(x)
 
     # i, j = 0, 0
     # while -1 < i < dims[0] and -1 < j < dims[1]:
@@ -270,39 +271,86 @@ def recurse(brd, count, dims):
     #             else:
     #
     #
-    # for i in range(dims[0]):
-    #     for j in range(dims[1]):
-    #         if brd[convert[i][j]] == '-' and brd[rev[convert[i][j]]] == '-':
-    #             refix = brd[0:convert[i][j]] + '#' + brd[convert[i][j] + 1:]
-    #             refix = refix[0:rev[convert[i][j]]] + "#" + refix[rev[convert[i][j]] + 1:]
-    #             b = add_implied([*refix], dims, added={convert[i][j], rev[convert[i][j]]})
-    #             if not b:
-    #                 continue
-    #             fake = False
-    #             for e in range(len(rev) // 2):
-    #                 if b[0][e] == '#':
-    #                     if b[0][rev[e]] != '#':
-    #                         fake = True
-    #                         break
-    #                 elif b[0][rev[e]] == '#':
-    #                     if b[0][e] != "#":
-    #                         fake = True
-    #                         break
-    #             if fake:
-    #                 continue
-    #             if b[1]:
-    #                 b = add_implied(b[0], dims, added={len(brd) // 2})
-    #             z = b[0].index('-')
-    #             m = [x for x in b[0]]
-    #             area_fill(m, dims, reverse[z][0], reverse[z][1])
-    #             if m.count('*') != (b[0].count('-') + words):
-    #                 continue
-    #             if count - b[0].count('#') < 0:
-    #                 continue
-    #             temp = recurse(''.join(b[0]), count, dims)
-    #             if temp:
-    #                 return temp
+    for i in range(dims[0]):
+        for j in range(dims[1]):
+            if brd[convert[i][j]] == '-' and brd[rev[convert[i][j]]] == '-':
+                refix = brd[0:convert[i][j]] + '#' + brd[convert[i][j] + 1:]
+                refix = refix[0:rev[convert[i][j]]] + "#" + refix[rev[convert[i][j]] + 1:]
+                b = add_implied([*refix], dims)
+                if not b:
+                    continue
+                fake = False
+                for e in range(len(rev) // 2):
+                    if b[0][e] == '#':
+                        if b[0][rev[e]] != '#':
+                            fake = True
+                            break
+                    elif b[0][rev[e]] == '#':
+                        if b[0][e] != "#":
+                            fake = True
+                            break
+                if fake:
+                    continue
+                if b[1]:
+                    b = add_implied(b[0], dims)
+                z = b[0].index('-')
+                m = [x for x in b[0]]
+                area_fill(m, dims, reverse[z][0], reverse[z][1])
+                if m.count('*') != (b[0].count('-') + words):
+                    continue
+                if count - b[0].count('#') < 0:
+                    continue
+                temp = recurse(''.join(b[0]), count, dims)
+                if temp:
+                    return temp
     return None
+
+
+def place_words(brd, dims):
+    global to_fill, convert, reverse
+
+    full = [*brd]
+
+    col = ''.join([brd[convert[x][0]] for x in range(len(convert))])
+    z = col.split('#')
+    while '' in z:
+        z.remove('')
+    in_word = False
+    count = 0
+    starts = {}
+    for b in range(len(col)):
+        if col[b] != '#' and in_word is False:
+            in_word = True
+            starts[count] = b
+            count += 1
+        if col[b] == '#' and in_word is True:
+            in_word = False
+    for f in range(len(z)):
+        place = random.choice(to_fill[z[f]])
+        for foo in range(len(place)):
+            full[convert[starts[f] + foo][0]] = place[foo]
+    brd = ''.join(full)
+    full = [*brd]
+    for i in range(len(convert)):
+        row = brd[convert[i][0]:convert[i][dims[1] - 1] + 1]
+        starts = {}
+        z = row.split('#')
+        while '' in z:
+            z.remove('')
+        in_word = False
+        count = 0
+        for b in range(len(row)):
+            if row[b] != '#' and in_word is False:
+                in_word = True
+                starts[count] = b
+                count += 1
+            if row[b] == '#' and in_word is True:
+                in_word = False
+        for f in range(len(z)):
+            place = random.choice(to_fill[z[f]])
+            for foo in range(len(place)):
+                full[convert[i][starts[f]] + foo] = place[foo]
+    return ''.join(full)
 
 
 def achieve_constraints(dims):
@@ -313,7 +361,7 @@ def achieve_constraints(dims):
         orient = re.search(r'\w(?=\d)', i).group(0).lower()
         vert = int(re.search(r'\w\d*', i).group(0)[1:])
         horiz = int(re.search(r'x\d*', i).group(0)[1:])
-        to_place = (re.search(r'\d[a-zA-Z#]*$', i).group(0)[1:]).lower()
+        to_place = (re.search(r'\d[a-zA-Z#]*$', i).group(0)[1:]).upper()
         if to_place == '':
             to_place = '#'
         if orient == 'h':
@@ -334,14 +382,79 @@ def achieve_constraints(dims):
     return ''.join(f[0])
 
 
+done = set()
+
+
+def get_subs(word):
+    global done
+    if word in done:
+        return {}
+    if word.count('-') == len(word):
+        return {word}
+    b = {word}
+    done.add(word)
+    for i in range(len(word)):
+        if word[i] != '-':
+            b = b.union(get_subs(word[0:i] + '-' + word[i + 1:]))
+    return b
+
+
+def save_dict(to_read, dims):
+    global done
+    f = open(to_read)
+    k = ''.join(f.readlines()).split('\n')[:-1]
+    for i in k:
+        if (len(i) <= dims[0] or len(i) <= dims[1]) and len(i)>2:
+            i = i.upper()
+            if len(i) <= 6:
+                done = set()
+                x = get_subs(i)
+                for j in x:
+                    if j in to_fill:
+                        to_fill[j].append(i)
+                    else:
+                        to_fill[j] = [i]
+            else:
+                for j in range(len(i)):
+                    st = len(i[0:j]) * '-' + i[j] + '-' * len(i[j + 1:])
+                    if st in to_fill:
+                        to_fill[st].append(i)
+                    else:
+                        to_fill[st] = [i]
+                st = '-' * len(i)
+                if st in to_fill:
+                    to_fill[st].append(i)
+                else:
+                    to_fill[st] = [i]
+
+
+def count_words(brd, dims):
+    global convert
+    words = []
+    for i in range(len(convert)):
+        row = brd[convert[i][0]:convert[i][dims[1] - 1] + 1]
+        z = row.split('#')
+        for j in z:
+            if j != '':
+                words.append(len(j))
+    # for i in range(len(convert[0])):
+    #     col =''.join([brd[convert[x][i]] for x in range(len(convert))])
+    #     z = col.split('#')
+    #     for j in z:
+    #         if j!='':
+    #             words.append(j)
+    return max(words)
+
+
 def main():
     global convert, reverse, rev
     b = read_input()
     if b[0][0] * b[0][1] == b[1]:
+        ans = '#' * b[1]
         print('#' * b[1])
     else:
         z = achieve_constraints(b[0])
-        print_board(b[0], z)
+        ans = z
         if z.count('#') != b[1]:
             ans = recurse(z, b[1], b[0])
             if not ans:
@@ -357,7 +470,11 @@ def main():
                             m[q] = '#'
                     ans = recurse(''.join(m), b[1], b[0])
             print()
-            print_board(b[0], ans)
+    print_board(b[0], ans)
+    save_dict(sys.argv[3], b[0])
+    dims = b[0]
+    b = place_words(ans, b[0])
+    print_board(dims, b)
 
 
 if __name__ == '__main__':
