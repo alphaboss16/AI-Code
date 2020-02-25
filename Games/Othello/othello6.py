@@ -398,12 +398,16 @@ def alpha_beta(brd, tkn, level, lower, upper, last=None):
         return prev[(brd, tkn, lower, upper)]
     else:
         prev[(brd, tkn, lower, upper)] = {}
+    enemy = 'o' if tkn == 'x' else 'x'
+    if brd.count(tkn)==0 or brd.count(enemy)==0:
+        prev[(brd, tkn, saved_lower, upper)] = [brd.count(tkn) - brd.count(enemy)]
+        return prev[(brd, tkn, saved_lower, upper)]
     if (brd, tkn) in saved_moves:
         moves = saved_moves[(brd, tkn)]
     else:
         moves = show_moves(brd, tkn)
         saved_moves[(brd, tkn)] = moves
-    enemy = 'o' if tkn == 'x' else 'x'
+
     best = [lower - 1]
     if len(moves) == 0:
         if (brd, enemy) in saved_moves:

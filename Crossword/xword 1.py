@@ -10,6 +10,10 @@ rev = []
 words = 0
 
 
+def count_vowels(word):
+    return word.count('E') + word.count('T') + word.count('A') + word.count('O') + word.count('I') + word.count('N')
+
+
 def print_board(dims, st):
     k = ""
     for i in range(dims[0]):
@@ -178,55 +182,16 @@ def recurse(brd, count, dims):
         else:
             return None
     checked = set()
-    while len(checked)<len(brd):
-        x = random.randint(0, len(brd)-1)
-        if brd[x] == '-' and brd[rev[x]] == '-' and x not in checked:
-            i = reverse[x][0]
-            j = reverse[x][1]
-            refix = brd[0:convert[i][j]] + '#' + brd[convert[i][j] + 1:]
-            refix = refix[0:rev[convert[i][j]]] + "#" + refix[rev[convert[i][j]] + 1:]
-            b = add_implied([*refix], dims)
-            if not b:
-                checked.add(x)
-                continue
-            fake = False
-            for e in range(len(rev) // 2):
-                if b[0][e] == '#':
-                    if b[0][rev[e]] != '#':
-                        fake = True
-                        break
-                elif b[0][rev[e]] == '#':
-                    if b[0][e] != "#":
-                        fake = True
-                        break
-            if fake:
-                checked.add(x)
-                continue
-            if b[1]:
-                b = add_implied(b[0], dims)
-            z = b[0].index('-')
-            m = [x for x in b[0]]
-            area_fill(m, dims, reverse[z][0], reverse[z][1])
-            if m.count('*') != (b[0].count('-') + words):
-                checked.add(x)
-                continue
-            if count - b[0].count('#') < 0:
-                checked.add(x)
-                continue
-            temp = recurse(''.join(b[0]), count, dims)
-            if temp:
-                return temp
-            checked.add(x)
-
-    # i, j = 0, 0
-    # while -1 < i < dims[0] and -1 < j < dims[1]:
-    #     if brd[convert[i][j]] == '-' and brd[rev[convert[i][j]]] == '-':
+    # while len(checked)<len(brd):
+    #     x = random.randint(0, len(brd)-1)
+    #     if brd[x] == '-' and brd[rev[x]] == '-' and x not in checked:
+    #         i = reverse[x][0]
+    #         j = reverse[x][1]
     #         refix = brd[0:convert[i][j]] + '#' + brd[convert[i][j] + 1:]
     #         refix = refix[0:rev[convert[i][j]]] + "#" + refix[rev[convert[i][j]] + 1:]
-    #         b = add_implied([*refix], dims, added={convert[i][j], rev[convert[i][j]]})
+    #         b = add_implied([*refix], dims)
     #         if not b:
-    #             checked.add((i, j))
-    #             j += 1
+    #             checked.add(x)
     #             continue
     #         fake = False
     #         for e in range(len(rev) // 2):
@@ -239,37 +204,76 @@ def recurse(brd, count, dims):
     #                     fake = True
     #                     break
     #         if fake:
-    #             checked.add((i, j))
-    #             j += 1
+    #             checked.add(x)
     #             continue
     #         if b[1]:
-    #             b = add_implied(b[0], dims, added={len(brd) // 2})
+    #             b = add_implied(b[0], dims)
     #         z = b[0].index('-')
     #         m = [x for x in b[0]]
     #         area_fill(m, dims, reverse[z][0], reverse[z][1])
     #         if m.count('*') != (b[0].count('-') + words):
-    #             checked.add((i, j))
-    #             j += 1
+    #             checked.add(x)
     #             continue
     #         if count - b[0].count('#') < 0:
-    #             checked.add((i, j))
-    #             j += 1
+    #             checked.add(x)
     #             continue
     #         temp = recurse(''.join(b[0]), count, dims)
     #         if temp:
     #             return temp
-    #         j += 1
-    #     elif brd[convert[i][j]] == '#':
-    #         if i == 0 or i == dims[0] - 1:
-    #             j += 4
-    #         elif j == 0 or j == dims[1] - 1:
-    #             i += 4
-    #         else:
-    #             if j+1<dims[1]:
-    #                 j += 1
-    #             else:
-    #
-    #
+    #         checked.add(x)
+
+    i, j = random.randint(0, dims[0]-1), random.randint(0, dims[1]-1)
+    while -1 < i < dims[0] and -1 < j < dims[1]:
+        if brd[convert[i][j]] == '-' and brd[rev[convert[i][j]]] == '-':
+            refix = brd[0:convert[i][j]] + '#' + brd[convert[i][j] + 1:]
+            refix = refix[0:rev[convert[i][j]]] + "#" + refix[rev[convert[i][j]] + 1:]
+            b = add_implied([*refix], dims, added={convert[i][j], rev[convert[i][j]]})
+            if not b:
+                checked.add((i, j))
+                j += 1
+                continue
+            fake = False
+            for e in range(len(rev) // 2):
+                if b[0][e] == '#':
+                    if b[0][rev[e]] != '#':
+                        fake = True
+                        break
+                elif b[0][rev[e]] == '#':
+                    if b[0][e] != "#":
+                        fake = True
+                        break
+            if fake:
+                checked.add((i, j))
+                j += 1
+                continue
+            if b[1]:
+                b = add_implied(b[0], dims, added={len(brd) // 2})
+            z = b[0].index('-')
+            m = [x for x in b[0]]
+            area_fill(m, dims, reverse[z][0], reverse[z][1])
+            if m.count('*') != (b[0].count('-') + words):
+                checked.add((i, j))
+                j += 1
+                continue
+            if count - b[0].count('#') < 0:
+                checked.add((i, j))
+                j += 1
+                continue
+            temp = recurse(''.join(b[0]), count, dims)
+            if temp:
+                return temp
+            j += 1
+        elif brd[convert[i][j]] == '#':
+            if i == 0 or i == dims[0] - 1:
+                j += 4
+            elif j == 0 or j == dims[1] - 1:
+                i += 4
+            else:
+                if j+1<dims[1]:
+                    j += 1
+                else:
+
+
     # for i in range(dims[0]):
     #     for j in range(dims[1]):
     #         if brd[convert[i][j]] == '-' and brd[rev[convert[i][j]]] == '-':

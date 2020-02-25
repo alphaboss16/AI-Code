@@ -11,6 +11,10 @@ words = 0
 to_fill = {}
 
 
+def count_vowels(word):
+    return word.count('E') + word.count('T') + word.count('A') + word.count('O') + word.count('I') + word.count('N')
+
+
 def print_board(dims, st):
     k = ""
     for i in range(dims[0]):
@@ -306,51 +310,96 @@ def recurse(brd, count, dims):
     return None
 
 
+def most_constrained(brd, dims):
+    global convert, to_fill
+    best_word = '---'
+    best_orient = ''
+    found_index = 0
+    found = False
+    for i in range(dims[0]):
+        row = brd[convert[i][0]:convert[i][dims[1] - 1] + 1]
+        z = row.split('#')
+        for j in range(len(z)):
+            if z[j] != '':
+                if z[j] in to_fill:
+                    if len(to_fill[z[j]]) < len(to_fill[best_word]):
+                        best_word = z[j]
+                        found = True
+                        found_index = j
+                        best_orient = 'H'
+                elif len(z[j]) > 5:
+                    temp = z[j]
+                    removed = []
+                    for b in range(len(temp)):
+                        if temp[b] != '-':
+                            removed.append((temp[b], b))
+                            temp = temp[0:b] + '-' + temp[b + 1:]
+                        if temp.count('-') == len(temp) - 1:
+                            break
+                    check = {*to_fill[temp]}
+                    combine = []
+                    ensure = False
+                    for rem in removed:
+                        st = (rem[1])*'-'+rem[0]+'-'*(len(z[j])-rem[1]-1)
+                        if st in to_fill:
+                            for u in to_fill[st]:
+                                if u in check:
+                                    combine.append(u)
+                                    ensure = True
+                        else:
+                            return None
+                        if ensure:
+                            temp = 
+                        if not ensure:
+                            return None
+                        check = {*combine}
+                        ensure = False
+                    to_fill[temp]=
+
+
+
+
+
+        if found:
+            in_word = False
+            starts = {}
+            count = 0
+            for b in range(len(row)):
+                if row[b] != '#' and in_word is False:
+                    in_word = True
+                    starts[count] = b
+                    count += 1
+                if row[b] == '#' and in_word is True:
+                    in_word = False
+            found_index = (i, starts[found_index])
+    for i in range(dims[1]):
+        col = ''.join([brd[convert[x][i]] for x in range(len(convert))])
+        z = col.split('#')
+        for j in range(len(z)):
+            if z[j] != '':
+                if z[j] in to_fill:
+                    if len(to_fill[z[j]]) < len(to_fill[best_word]):
+                        best_word = z[j]
+                        found = True
+                        found_index = j
+                        best_orient = 'H'
+        if found:
+            in_word = False
+            starts = {}
+            count = 0
+            for b in range(len(row)):
+                if row[b] != '#' and in_word is False:
+                    in_word = True
+                    starts[count] = b
+                    count += 1
+                if row[b] == '#' and in_word is True:
+                    in_word = False
+            found_index = (i, starts[found_index])
+
+
 def place_words(brd, dims):
     global to_fill, convert, reverse
-
     full = [*brd]
-
-    col = ''.join([brd[convert[x][0]] for x in range(len(convert))])
-    z = col.split('#')
-    while '' in z:
-        z.remove('')
-    in_word = False
-    count = 0
-    starts = {}
-    for b in range(len(col)):
-        if col[b] != '#' and in_word is False:
-            in_word = True
-            starts[count] = b
-            count += 1
-        if col[b] == '#' and in_word is True:
-            in_word = False
-    for f in range(len(z)):
-        place = random.choice(to_fill[z[f]])
-        for foo in range(len(place)):
-            full[convert[starts[f] + foo][0]] = place[foo]
-    brd = ''.join(full)
-    full = [*brd]
-    for i in range(len(convert)):
-        row = brd[convert[i][0]:convert[i][dims[1] - 1] + 1]
-        starts = {}
-        z = row.split('#')
-        while '' in z:
-            z.remove('')
-        in_word = False
-        count = 0
-        for b in range(len(row)):
-            if row[b] != '#' and in_word is False:
-                in_word = True
-                starts[count] = b
-                count += 1
-            if row[b] == '#' and in_word is True:
-                in_word = False
-        for f in range(len(z)):
-            place = random.choice(to_fill[z[f]])
-            for foo in range(len(place)):
-                full[convert[i][starts[f]] + foo] = place[foo]
-    return ''.join(full)
 
 
 def achieve_constraints(dims):
@@ -404,28 +453,33 @@ def save_dict(to_read, dims):
     f = open(to_read)
     k = ''.join(f.readlines()).split('\n')[:-1]
     for i in k:
-        if (len(i) <= dims[0] or len(i) <= dims[1]) and len(i)>2:
+        if (len(i) <= dims[0] or len(i) <= dims[1]) and len(i) > 2:
             i = i.upper()
-            if len(i) <= 6:
+            if len(i) <= 5:
                 done = set()
                 x = get_subs(i)
+                m = (i, count_vowels(i))
                 for j in x:
                     if j in to_fill:
-                        to_fill[j].append(i)
+                        to_fill[j].append(m)
                     else:
-                        to_fill[j] = [i]
+                        to_fill[j] = [m]
             else:
+                m = (i, count_vowels(i))
                 for j in range(len(i)):
                     st = len(i[0:j]) * '-' + i[j] + '-' * len(i[j + 1:])
                     if st in to_fill:
-                        to_fill[st].append(i)
+                        to_fill[st].append(m)
                     else:
-                        to_fill[st] = [i]
+                        to_fill[st] = [m]
                 st = '-' * len(i)
+                m = (i, count_vowels(i))
                 if st in to_fill:
-                    to_fill[st].append(i)
+                    to_fill[st].append(m)
                 else:
-                    to_fill[st] = [i]
+                    to_fill[st] = [m]
+    for i in to_fill:
+        to_fill[i].sort(key=lambda b: b[1], reverse=True)
 
 
 def count_words(brd, dims):
