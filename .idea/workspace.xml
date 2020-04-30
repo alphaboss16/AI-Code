@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b730fec9-e1c7-493a-9ee4-b86804c4529a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Crossword/partb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Network Exploration/PartA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Network Exploration/PartB.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Network Exploration/PartC.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neural Networks/NN1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neural Networks/weights.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crossword/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Crossword/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crossword/xword 1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Crossword/xword 1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crossword/xword2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Crossword/xword2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Crossword/partb.py" beforeDir="false" afterPath="$PROJECT_DIR$/Crossword/partb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Network Exploration/PartA.py" beforeDir="false" afterPath="$PROJECT_DIR$/Network Exploration/PartA.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +25,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Crossword/xword2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
+            <state relative-caret-position="10319">
               <caret line="609" column="10" selection-start-line="609" selection-start-column="10" selection-end-line="609" selection-end-column="10" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -32,16 +34,59 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Network Exploration/PartB.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" selection-start-line="30" selection-end-line="48" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Network Exploration/PartC.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1717">
+              <caret line="101" selection-end-line="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Network Exploration/partD.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Crossword/partb.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Neural Networks/NN1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Neural Networks/weights.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Network Exploration/PartA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="714">
+              <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -49,7 +94,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WordLadder/ladders.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
+            <state relative-caret-position="51">
               <caret line="4" selection-start-line="4" selection-end-line="23" selection-end-column="23" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -103,14 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PythonLab2/tasks.py" />
-        <option value="$PROJECT_DIR$/SliderLab/slider.py" />
-        <option value="$PROJECT_DIR$/SliderLab/eights.py" />
-        <option value="$PROJECT_DIR$/WordLadder/ladders.py" />
-        <option value="$PROJECT_DIR$/SliderLab/quiz1.py" />
-        <option value="$PROJECT_DIR$/SliderLab/optimized.py" />
-        <option value="$PROJECT_DIR$/SliderLab/words.txt" />
-        <option value="$PROJECT_DIR$/SliderLab/opitimized2.py" />
         <option value="$PROJECT_DIR$/Railroad/distanceDemo.py" />
         <option value="$PROJECT_DIR$/Railroad/rrEdges.txt" />
         <option value="$PROJECT_DIR$/Railroad/rrNodeCity.txt" />
@@ -153,7 +190,15 @@
         <option value="$PROJECT_DIR$/Crossword/xword 1.py" />
         <option value="$PROJECT_DIR$/Crossword/test.py" />
         <option value="$PROJECT_DIR$/Crossword/xword2.py" />
+        <option value="$PROJECT_DIR$/Crossword/partb.py" />
+        <option value="$PROJECT_DIR$/Network Exploration/PartB.py" />
         <option value="$PROJECT_DIR$/Network Exploration/PartA.py" />
+        <option value="$PROJECT_DIR$/Network Exploration/PartC.py" />
+        <option value="$PROJECT_DIR$/Games/partD.py" />
+        <option value="$PROJECT_DIR$/Network Exploration/partD.py" />
+        <option value="$PROJECT_DIR$/Network Exploration/NN1.py" />
+        <option value="$PROJECT_DIR$/Neural Networks/NN1.py" />
+        <option value="$PROJECT_DIR$/Neural Networks/weights.txt" />
       </list>
     </option>
   </component>
@@ -180,7 +225,12 @@
             <path>
               <item name="AI" type="b2602c69:ProjectViewProjectNode" />
               <item name="AI" type="462c0819:PsiDirectoryNode" />
-              <item name="Network Exploration" type="462c0819:PsiDirectoryNode" />
+              <item name="Games" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AI" type="462c0819:PsiDirectoryNode" />
+              <item name="Neural Networks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AI" type="b2602c69:ProjectViewProjectNode" />
@@ -200,7 +250,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Crossword/xword2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Neural Networks/NN1.py" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
@@ -217,7 +267,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.xword2">
+  <component name="RunManager" selected="Python.NN1">
+    <configuration name="NN1" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="AI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\dev\.virtualenvs\AI\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Neural Networks" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Neural Networks/NN1.py" />
+      <option name="PARAMETERS" value="weights.txt T3 5 2 3 1 4" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="eights" type="PythonConfigurationType" factoryName="Python">
       <module name="AI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -240,31 +312,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="xword2" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="AI" />
-      <option name="INTERPRETER_OPTIONS" value="-m cProfile" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\dev\.virtualenvs\AI\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Crossword" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Crossword/xword2.py" />
-      <option name="PARAMETERS" value="15x15 37 &quot;dctLarge.txt&quot; &quot;H0x4#&quot; &quot;v4x0#&quot; &quot;h1x8a&quot;" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.eights" />
-      <item itemvalue="Python.xword2" />
+      <item itemvalue="Python.NN1" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -323,7 +373,12 @@
       <workItem from="1582831544469" duration="501000" />
       <workItem from="1582833814221" duration="23480000" />
       <workItem from="1583161367947" duration="2105000" />
-      <workItem from="1583440134198" duration="1688000" />
+      <workItem from="1583440134198" duration="13786000" />
+      <workItem from="1583856559142" duration="969000" />
+      <workItem from="1583861954680" duration="1851000" />
+      <workItem from="1584004889355" duration="9866000" />
+      <workItem from="1585496538669" duration="129000" />
+      <workItem from="1588123598637" duration="7468000" />
     </task>
     <task id="LOCAL-00001" summary="nothing lol">
       <created>1571159164634</created>
@@ -378,7 +433,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="460037000" />
+    <option name="totallyTimeSpent" value="492418000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -393,13 +448,13 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49025974" visible="true" weight="0.2564725" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49025974" visible="true" weight="0.27890056" />
       <window_info id="Structure" order="1" sideWeight="0.5092937" side_tool="true" weight="0.17057396" />
       <window_info id="Favorites" order="2" sideWeight="0.50974023" side_tool="true" weight="0.19401778" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899627" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4995958" weight="0.8698885" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.497979" weight="0.39591077" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4995958" weight="0.6356877" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.497979" weight="0.47517732" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899627" />
@@ -407,8 +462,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899627" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50444627" side_tool="true" weight="0.54460967" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49555376" visible="true" weight="0.64869887" />
-      <window_info anchor="bottom" auto_hide="true" id="Python Console" order="12" weight="0.4126394" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49555376" visible="true" weight="0.37943262" />
+      <window_info anchor="bottom" auto_hide="true" id="Python Console" order="12" weight="0.4113475" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -590,7 +645,6 @@
         <watch expression="temp" />
         <watch expression="removed" />
         <watch expression="to_fill" language="Python" />
-        <watch expression="temp" />
       </configuration>
     </watches-manager>
   </component>
@@ -605,6 +659,8 @@
     <SUITE FILE_PATH="coverage/AI$eights.coverage" NAME="eights Coverage Results" MODIFIED="1571337404709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Railroad" />
     <SUITE FILE_PATH="coverage/AI$sudokuquiz.coverage" NAME="sudokuquiz Coverage Results" MODIFIED="1574799000294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CSP" />
     <SUITE FILE_PATH="coverage/AI$quizisohedral.coverage" NAME="quizcolorisohedron Coverage Results" MODIFIED="1573159716597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CSP" />
+    <SUITE FILE_PATH="coverage/AI$PartB.coverage" NAME="PartB Coverage Results" MODIFIED="1583857515900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Network Exploration" />
+    <SUITE FILE_PATH="coverage/AI$NN1.coverage" NAME="NN1 Coverage Results" MODIFIED="1588130346099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Neural Networks" />
     <SUITE FILE_PATH="coverage/AI$othello5.coverage" NAME="othello5 Coverage Results" MODIFIED="1579204528199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Games/Othello" />
     <SUITE FILE_PATH="coverage/AI$sodoku2C.coverage" NAME="sudoku2B Coverage Results" MODIFIED="1574075297419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CSP" />
     <SUITE FILE_PATH="coverage/AI$blocks.coverage" NAME="othello3 Coverage Results" MODIFIED="1576897178251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Games/Othello" />
@@ -614,6 +670,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>min(len(total) - zero_count, 8)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>to_fill['---ET--']</expression-string>
         <language-id>Python</language-id>
@@ -651,11 +712,6 @@
       </expression>
       <expression>
         <expression-string>''.join(brd.split('*')).split('#')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(''.join(brd.split('*')).split('#')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -766,65 +822,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Program Files/Python37/Lib/tokenize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="446" selection-start-line="446" selection-end-line="446" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Peg Puzzle Quiz/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SliderLab/eights.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSP/sudoku1B.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSP/first.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSP/quizisohedral.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSP/quizmodhex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSP/quizcolorisohedron.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CSP/sudoku1A.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -1068,13 +1065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/Python37/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files/Python37/Lib/runpy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -1128,23 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WordLadder/ladders.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" selection-start-line="4" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Network Exploration/PartA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1152,9 +1125,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Crossword/partb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="69" column="14" lean-forward="true" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python37/Lib/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="199" selection-start-line="199" selection-end-line="199" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Games/partD.py" />
     <entry file="file://$PROJECT_DIR$/Crossword/xword2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
+        <state relative-caret-position="10319">
           <caret line="609" column="10" selection-start-line="609" selection-start-column="10" selection-end-line="609" selection-end-column="10" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -1162,8 +1150,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Crossword/partb.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Network Exploration/PartB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" selection-start-line="30" selection-end-line="48" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network Exploration/PartC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="101" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network Exploration/PartA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordLadder/ladders.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" selection-start-line="4" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network Exploration/NN1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python37/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="323" selection-start-line="323" selection-end-line="323" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network Exploration/partD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neural Networks/weights.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neural Networks/NN1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

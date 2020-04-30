@@ -22,12 +22,35 @@ class Node:
         Node.pairs += 1
 
 
+def diameter(total):
+    x = max(total, key=lambda b: b.degree)
+    to_check = [(x, 0)]
+    finished = {}
+    count = 0
+    while count < len(to_check):
+        next = to_check[count][0].con
+        for j in next:
+            if j.__str__() in finished:
+                continue
+            if j.degree == 1:
+                finished[j.__str__()] = to_check[count][1] + 1
+            else:
+                finished[j.__str__()] = to_check[count][1] + 1
+                to_check.append((j, to_check[count][1] + 1))
+        count += 1
+    visited = list(finished.keys())
+    z = sorted(visited, key=lambda m: finished[m])
+    return finished[z[-1]] + finished[z[-2]]
+
+
 total = [Node(str(x)) for x in range(100000)]
+
 while Node.pairs < 250000:
     one = random.choice(total)
     two = random.choice(total)
     if one != two and one not in two.con:
         one.connect(two)
+print(diameter(total))
 temp = {}
 for i in total:
     if i.degree not in temp:
