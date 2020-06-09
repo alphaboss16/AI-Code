@@ -16,9 +16,9 @@ def main():
     else:
         transfer = lambda x: -1 + 2 / (1 + (math.e ** (-x)))
     for i in total:
-        curr = i[:-1] if i[-1] =='\n' else i
+        curr = i[:-1] if i[-1] == '\n' else i
         temp = curr.split(' ')
-        layers.append([float(x) for x in temp])
+        layers.append([float(x) for x in temp if x!=''])
     for i in layers[:-1]:
         x = len(i) // len(start)
         temp = []
@@ -31,7 +31,7 @@ def main():
         start = temp
     for i in range(len(start)):
         start[i] = start[i] * layers[-1][i]
-    print(str(start).replace('[', '').replace(']', '').replace(',',''))
+    print(str(start).replace('[', '').replace(']', '').replace(',', ''))
 
 
 if __name__ == '__main__':
