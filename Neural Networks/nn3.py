@@ -75,8 +75,8 @@ def main():
     compare_num = float(fix[-1])
     # test = verify_inequality(99, 99, compare_type, compare_num)
     keys = set()
-    for i in range(-15, 15, 3):
-        for j in range(-15, 15, 3):
+    for i in range(-15, 15):
+        for j in range(-15, 15):
             keys.add((i / 10.0, j / 10.0, 1))
     radius = math.sqrt(compare_num)
 
